@@ -1,66 +1,85 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>FreshMart — Farm Fresh Vegetables &amp; Fruits</title>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#fdfbf3;color:#24301e;font-family:'DM Sans',sans-serif}
-.bar{background:#2f6b2a;color:#fff;text-align:center;font-size:13px;padding:8px}
-header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;max-width:1100px;margin:0 auto}
-.logo{font-family:'Fraunces',serif;font-size:28px;color:#2f6b2a}.logo span{color:#e8722a}
-.cartbtn{background:#2f6b2a;color:#fff;border:0;padding:11px 20px;border-radius:999px;font-weight:700;cursor:pointer}
-.hero{max-width:1100px;margin:10px auto;padding:26px 24px;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
-.hero h1{font-family:'Fraunces',serif;font-size:50px;line-height:1.05;margin:0 0 12px}
-.hero p{color:#5c6b52;font-size:17px}
-.basket{height:260px;border-radius:28px;background:radial-gradient(circle at 30% 30%,#ffb347,#e8722a 45%,#2f6b2a 100%);display:flex;align-items:center;justify-content:center;font-size:100px}
-.pills{max-width:1100px;margin:0 auto;padding:10px 24px;display:flex;gap:10px;flex-wrap:wrap}
-.pill{border:2px solid #d8e4c8;background:#fff;padding:8px 16px;border-radius:999px;cursor:pointer;font-weight:600}
-.pill.on{background:#2f6b2a;color:#fff;border-color:#2f6b2a}
-.grid{max-width:1100px;margin:0 auto;padding:20px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.card{background:#fff;border:1px solid #e4e0cf;border-radius:18px;padding:16px;text-align:center}
-.veg{height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:50px;margin-bottom:10px}
-.price{color:#2f6b2a;font-weight:700;font-size:18px;margin:6px 0}
-.add{background:#f3f8ec;border:1px solid #2f6b2a;color:#2f6b2a;padding:8px 16px;border-radius:999px;font-weight:700;cursor:pointer}
-.drawer{position:fixed;top:0;right:0;width:360px;max-width:92vw;height:100%;background:#fff;box-shadow:-8px 0 30px rgba(0,0,0,.2);padding:22px;overflow:auto;transform:translateX(110%);transition:.25s;z-index:10}
+<title>Fresh produce, delivered — FreshMart</title>
+<meta name="description" content="FreshMart — farm-fresh vegetables and fruits delivered same day. Shop produce, meet the farmers, and build your box."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://syedsenterprises.github.io/freshmart/"/>
+<meta property="og:type" content="website"/><meta property="og:site_name" content="FreshMart"/>
+<meta property="og:title" content="Fresh produce, delivered — FreshMart"/><meta property="og:description" content="FreshMart — farm-fresh vegetables and fruits delivered same day. Shop produce, meet the farmers, and build your box."/><meta property="og:url" content="https://syedsenterprises.github.io/freshmart/"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Fresh produce, delivered — FreshMart"/><meta name="twitter:description" content="FreshMart — farm-fresh vegetables and fruits delivered same day. Shop produce, meet the farmers, and build your box."/>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://syedsenterprises.github.io/freshmart/#org", "name": "FreshMart", "url": "https://syedsenterprises.github.io/freshmart/"}, {"@type": "WebSite", "@id": "https://syedsenterprises.github.io/freshmart/#site", "url": "https://syedsenterprises.github.io/freshmart/", "name": "FreshMart", "publisher": {"@id": "https://syedsenterprises.github.io/freshmart/#org"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://syedsenterprises.github.io/freshmart/"}, {"@type": "ListItem", "position": 2, "name": "Fresh produce, delivered", "item": "https://syedsenterprises.github.io/freshmart/"}]}]}</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fraunces:wght@700&display=swap" rel="stylesheet"/>
+<style>*{box-sizing:border-box}body{margin:0;background:#f7fbf3;color:#1c2b1a;font-family:'Inter',sans-serif}
+a{color:#2e7d32}header{max-width:1100px;margin:0 auto;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.logo{font-family:'Fraunces',serif;font-size:26px;color:#2e7d32;text-decoration:none}.logo span{color:#ef6c00}
+nav a{margin:0 10px;text-decoration:none;color:#1c2b1a;font-weight:500}nav a.on{color:#ef6c00;border-bottom:2px solid #ef6c00}
+.wrap{max-width:1100px;margin:0 auto;padding:10px 22px 30px}
+h1{font-family:'Fraunces',serif;font-size:42px;line-height:1.1}h2{font-family:'Fraunces',serif;font-size:30px}h3{font-size:19px}
+.btn{background:#2e7d32;color:#fff;border:0;padding:12px 22px;border-radius:999px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+.btn2{background:#ef6c00;color:#fff;border:0;padding:11px 20px;border-radius:999px;font-weight:700;cursor:pointer}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:#ffffff;border:1px solid #dde8d5;border-radius:16px;padding:20px}
+.card p{color:#5b6b57}input,select,textarea{width:100%;padding:12px;margin:6px 0;border:1px solid #dde8d5;border-radius:10px;font-size:15px;font-family:inherit}
+.ok{background:#e6f4ea;color:#1e5c2e;padding:12px;border-radius:10px;margin-top:12px;display:none}
+footer{max-width:1100px;margin:20px auto;padding:20px 22px;border-top:1px solid #dde8d5;color:#5b6b57;font-size:13px;text-align:center}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}
+.tag{color:#5b6b57;font-size:17px}
+.chatbtn{position:fixed;right:20px;bottom:20px;width:60px;height:60px;border-radius:50%;background:#ef6c00;color:#fff;border:0;font-size:26px;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.3);z-index:60}
+.chatpanel{position:fixed;right:20px;bottom:92px;width:360px;max-width:92vw;height:480px;max-height:70vh;background:#fff;color:#222;border-radius:18px;box-shadow:0 16px 40px rgba(0,0,0,.3);display:none;flex-direction:column;overflow:hidden;z-index:60}
+.chatpanel.open{display:flex}
+.chathead{background:#2e7d32;color:#fff;padding:14px 16px}.chathead b{font-size:16px}.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#4ade80;margin-right:6px}
+.chatmsgs{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:85%;padding:10px 13px;border-radius:14px;font-size:14px;line-height:1.45}
+.msg.bot{background:#f1f5f9;align-self:flex-start}.msg.user{background:#2e7d32;color:#fff;align-self:flex-end}
+.chips{display:flex;gap:6px;flex-wrap:wrap;padding:0 12px 10px}.chips button{background:#f1f5f9;border:1px solid #e2e8f0;padding:6px 11px;border-radius:999px;cursor:pointer;font-size:12px}
+.chatin{display:flex;gap:8px;padding:10px;border-top:1px solid #eee}.chatin input{margin:0}.chatin button{background:#ef6c00;color:#fff;border:0;padding:11px 16px;border-radius:10px;font-weight:700;cursor:pointer}
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,90px);background:#1f2937;color:#fff;padding:15px 20px;border-radius:999px;font-weight:600;box-shadow:0 12px 30px rgba(0,0,0,.35);transition:.3s;z-index:70;opacity:0;pointer-events:none;max-width:92vw;text-align:center}
+.toast.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+.toast button{background:#ef6c00;color:#fff;border:0;padding:7px 14px;border-radius:999px;margin-left:12px;cursor:pointer;font-weight:700}
+.pulse{animation:pulse .5s}@keyframes pulse{50%{transform:scale(1.12)}}
+.drawer{position:fixed;top:0;right:0;width:360px;max-width:92vw;height:100%;background:#fff;color:#222;box-shadow:-8px 0 30px rgba(0,0,0,.2);padding:22px;overflow:auto;transform:translateX(110%);transition:.25s;z-index:65}
 .drawer.open{transform:none}
 .line{display:flex;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid #eee;align-items:center}
 .qty button{width:26px;height:26px;border-radius:50%;border:1px solid #ccc;background:#fff;cursor:pointer;font-weight:700}
-input,select{width:100%;padding:11px;margin:6px 0;border:1px solid #d8d8ce;border-radius:10px;font-size:15px}
-.checkout{background:#e8722a;color:#fff;border:0;padding:13px;border-radius:999px;font-weight:700;width:100%;cursor:pointer;margin-top:12px}
-.ok{background:#e6f4ea;color:#1e5c2e;padding:14px;border-radius:12px;margin-top:12px;display:none}
-footer{text-align:center;color:#5c6b52;padding:24px;font-size:13px}
-@media(max-width:700px){.hero,.grid{grid-template-columns:1fr 1fr}.hero h1{font-size:36px}}
-.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,90px);background:#1f2937;color:#fff;padding:15px 20px;border-radius:999px;font-weight:600;box-shadow:0 12px 30px rgba(0,0,0,.35);transition:.3s;z-index:50;opacity:0;pointer-events:none;max-width:92vw;text-align:center}
-.toast.show{transform:translate(-50%,0);opacity:1;pointer-events:auto}
-.toast button{background:#e8722a;color:#fff;border:0;padding:7px 14px;border-radius:999px;margin-left:12px;cursor:pointer;font-weight:700}
-.pulse{animation:pulse .5s}@keyframes pulse{50%{transform:scale(1.12)}}
-</style></head><body>
-<div class="bar">Free delivery over $25 · Picked this morning from partner farms</div>
-<header><div class="logo">Fresh<span>Mart</span></div><button class="cartbtn" onclick="toggle(true)">Cart (<span id="n">0</span>) · $<span id="t">0.00</span></button></header>
-<section class="hero"><div><h1>Vegetables &amp; fruits, picked at dawn.</h1><p>From 40 local farms to your door in under 24 hours. Add to your cart — it saves automatically, even if you close the page.</p></div><div class="basket">🥬🍎🥕</div></section>
-<div class="pills" id="pills"></div>
-<section class="grid" id="shop"></section>
-<aside class="drawer" id="drawer"><h2 style="font-family:'Fraunces',serif">Your cart <button style="float:right;border:0;background:none;font-size:20px;cursor:pointer" onclick="toggle(false)">×</button></h2>
-<div id="lines"></div><div id="sums" style="margin-top:12px"></div>
-<h3>Checkout</h3><input id="cname" placeholder="Full name"/><input id="caddr" placeholder="Delivery address"/><input id="cphone" placeholder="Phone"/>
-<button class="checkout" onclick="placeOrder()">Place order →</button><div class="ok" id="ok"></div></aside>
-<footer>FreshMart · Static site — cart &amp; orders are saved in your browser (localStorage). No payment is taken; connect a payment provider to sell for real.</footer>
-<div class="toast" id="toast"></div><script>
-const P=[{id:1,n:'Rainbow Carrots',p:2.40,u:'/ kg',c:'veg',e:'🥕',bg:'#e8f5d8'},{id:2,n:'Honeycrisp Apples',p:3.90,u:'/ kg',c:'fruit',e:'🍎',bg:'#fde8d8'},{id:3,n:'Baby Spinach',p:1.80,u:'/ pack',c:'leaf',e:'🥬',bg:'#dff2d8'},{id:4,n:'Vine Tomatoes',p:2.90,u:'/ kg',c:'veg',e:'🍅',bg:'#fbe8e8'},{id:5,n:'Bananas',p:1.20,u:'/ kg',c:'fruit',e:'🍌',bg:'#fdf3d0'},{id:6,n:'Eggplant',p:2.10,u:'/ kg',c:'veg',e:'🍆',bg:'#e8e0f5'},{id:7,n:'Strawberries',p:4.50,u:'/ box',c:'fruit',e:'🍓',bg:'#ffe8ee'},{id:8,n:'Broccoli',p:2.60,u:'/ head',c:'leaf',e:'🥦',bg:'#dff2e2'}];
-const CATS=[['all','All'],['veg','Vegetables'],['fruit','Fruits'],['leaf','Leafy greens']];
-let cur='all',cart=JSON.parse(localStorage.getItem('fm_cart')||'{}');
-function save(){localStorage.setItem('fm_cart',JSON.stringify(cart));renderCart()}
-function pills(){document.getElementById('pills').innerHTML=CATS.map(c=>`<button class="pill ${c[0]===cur?'on':''}" onclick="cur='${c[0]}';pills();render()">${c[1]}</button>`).join('')}
-function render(){document.getElementById('shop').innerHTML=P.filter(x=>cur==='all'||x.c===cur).map(x=>`<div class="card"><div class="veg" style="background:${x.bg}">${x.e}</div><b>${x.n}</b><div class="price">$${x.p.toFixed(2)}${x.u}</div><button class="add" onclick="add(${x.id})">Add to cart</button></div>`).join('')}
-function showToast(msg){let t=document.getElementById('toast');t.innerHTML=msg+' <button onclick="toggle(true);hideToast()">View cart</button>';t.classList.add('show');let cb=document.querySelector('.cartbtn');if(cb){cb.classList.remove('pulse');void cb.offsetWidth;cb.classList.add('pulse')}clearTimeout(window._tt);window._tt=setTimeout(hideToast,3000)}
-function hideToast(){document.getElementById('toast').classList.remove('show')}
-function add(id){cart[id]=(cart[id]||0)+1;save();let x=P.find(p=>p.id==id);showToast('✓ 1 item added to cart — '+x.n)}
-function chg(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];save()}
-function renderCart(){let n=0,sub=0,html='';for(let id in cart){let x=P.find(p=>p.id==id),q=cart[id];n+=q;sub+=x.p*q;html+=`<div class="line"><span>${x.e} ${x.n}</span><span class="qty"><button onclick="chg(${id},-1)">−</button> ${q} <button onclick="chg(${id},1)">+</button></span><span>$${(x.p*q).toFixed(2)}</span></div>`}
-document.getElementById('lines').innerHTML=html||'<p>Your cart is empty.</p>';
-let del=sub===0?0:(sub>=25?0:3.99);
-document.getElementById('sums').innerHTML=`<div>Subtotal: $${sub.toFixed(2)}</div><div>Delivery: ${del===0?'FREE':'$'+del.toFixed(2)}</div><div><b>Total: $${(sub+del).toFixed(2)}</b></div>`;
-document.getElementById('n').textContent=n;document.getElementById('t').textContent=(sub+del).toFixed(2)}
-function toggle(o){document.getElementById('drawer').classList.toggle('open',o)}
-function placeOrder(){let nm=document.getElementById('cname').value.trim(),ad=document.getElementById('caddr').value.trim();if(!nm||!ad||Object.keys(cart).length===0){alert('Add items and fill name + address first.');return}
-let ref='FM-'+Math.floor(1000+Math.random()*9000);document.getElementById('ok').style.display='block';document.getElementById('ok').innerHTML=`Order <b>${ref}</b> placed for ${nm}. Delivery to ${ad} — total $${document.getElementById('t').textContent}. (Demo checkout: no payment taken.)`;cart={};save()}
-pills();render();renderCart();
-</script></body></html>
+@media(max-width:700px){.grid3,.grid2,.hero{grid-template-columns:1fr}h1{font-size:32px}}</style></head><body>
+<header><a class="logo" href="index.html">🥬 Fresh<span>Mart</span></a><nav><a href="index.html" class="on">Home</a><a href="shop.html" class="">Shop</a><a href="about.html" class="">About</a><a href="contact.html" class="">Contact</a></nav><button class="btn2" onclick="toggle(true)">Cart (<span id="n">0</span>) · $<span id="t">0.00</span></button></header>
+<main class="wrap"><section class="hero"><div><p style="color:#2e7d32;font-weight:700">FARM TO DOOR · SAME DAY</p><h1>Vegetables and fruits, picked at dawn.</h1><p class="tag">Real farms, honest prices, and delivery that is free over $25. Build your box below.</p><p><a class="btn" href="shop.html">Shop fresh picks →</a> <a class="btn2" href="about.html">Meet the farmers</a></p></div><div class="card"><h3>🥕 This week is box</h3><p>Tomatoes, rainbow carrots, spinach, bananas and strawberries — $24.50 for the set. Add items from the shop page and your box builds itself.</p><p><b>Free delivery over $25 · otherwise $3.99</b></p></div></section>
+<h2>Why FreshMart?</h2><div class="grid3"><div class="card"><h3>🌱 Picked at dawn</h3><p>Harvested the morning it ships, never warehoused for days.</p></div><div class="card"><h3>🚚 Same-day delivery</h3><p>Order by 2pm and dinner is sorted tonight.</p></div><div class="card"><h3>💚 No plastic waste</h3><p>Returnable crates and paper bags only.</p></div></div>
+<h2>From the kitchen</h2><div class="grid2"><div class="card"><h3>Roasted rainbow carrots</h3><p>15 minutes, olive oil, honey, thyme. The recipe card is free with every carrot order in this demo.</p></div><div class="card"><h3>Tomato basil salad</h3><p>Heirloom tomatoes, basil, salt, good oil. Nothing else needed.</p></div></div></main>
+<footer>FreshMart · Fresh produce, delivered. Demo site — sample data, no real orders.<br/><a href="index.html">Home</a> · <a href="shop.html">Shop</a> · <a href="about.html">About</a> · <a href="contact.html">Contact</a></footer>
+<aside class="drawer" id="drawer"><h2>Your cart <button style="float:right;border:0;background:none;font-size:22px;cursor:pointer" onclick="toggle(false)">×</button></h2><div id="lines"></div><div id="sums" style="margin-top:12px"></div><div id="checkout"></div></aside><div class="toast" id="toast"></div><button class="chatbtn" onclick="toggleChat()">💬</button><div class="chatpanel" id="chatpanel"><div class="chathead"><span class="dot"></span><b>Mira</b><span style="opacity:.8"> · Online · Demo assistant, replies instantly</span><button style="float:right;background:none;border:0;color:#fff;font-size:18px;cursor:pointer" onclick="toggleChat()">×</button></div><div class="chatmsgs" id="chatmsgs"></div><div class="chips"><button onclick="chip(&quot;Delivery info&quot;)">Delivery info</button><button onclick="chip(&quot;What is fresh today?&quot;)">What is fresh today?</button><button onclick="chip(&quot;Do you deliver?&quot;)">Do you deliver?</button></div><div class="chatin"><input id="chatinput" placeholder="Ask anything…" onkeydown="if(event.key==='Enter')sendChat()"/><button onclick="sendChat()">Send</button></div></div>
+<script>const BOT={"name": "Mira", "greeting": "Hi! I am Mira, the FreshMart demo assistant. Ask me about produce, delivery or prices.", "chips": ["Delivery info", "What is fresh today?", "Do you deliver?"], "rules": [{"k": ["deliver", "delivery"], "a": "Delivery is FREE on orders over $25, otherwise $3.99. Same-day slots run 8am to 8pm in this demo."}, {"k": ["price", "cost"], "a": "Prices are on the shop page — most vegetables run $1 to $4 per kg. Everything here is sample data."}, {"k": ["hour", "open"], "a": "We are open 7am to 9pm, every day, in this demo."}, {"k": ["fresh", "today"], "a": "Today is fresh picks are tomatoes, rainbow carrots and strawberries — see the shop page."}, {"k": ["human", "person", "contact"], "a": "Use the contact page form. This is a demo, so replies are not monitored in real life."}], "fallback": "I am a demo assistant. I can help with prices, hours, bookings and services. For a real person, use the contact page."};
+function botReply(q){q=q.toLowerCase();for(let r of BOT.rules){if(r.k.some(k=>q.includes(k)))return r.a}return BOT.fallback}
+let greeted=false;
+function toggleChat(){let p=document.getElementById('chatpanel');p.classList.toggle('open');if(p.classList.contains('open')&&!greeted){greeted=true;addMsg('bot',BOT.greeting)}}
+function addMsg(who,text){let m=document.createElement('div');m.className='msg '+who;m.textContent=text;document.getElementById('chatmsgs').appendChild(m);document.getElementById('chatmsgs').scrollTop=99999}
+function sendChat(text){let inp=document.getElementById('chatinput');let q=(text||inp.value).trim();if(!q)return;addMsg('user',q);inp.value='';let t=document.createElement('div');t.className='msg bot';t.id='typing';t.textContent='Typing…';document.getElementById('chatmsgs').appendChild(t);setTimeout(()=>{t.remove();addMsg('bot',botReply(q))},700)}
+function chip(q){document.getElementById('chatinput').value=q;sendChat()}</script>
+
+<script>
+function money(x){return x.toFixed(2)}
+let cart=JSON.parse(localStorage.getItem('fm_cart')||'{}');
+function save(){localStorage.setItem('fm_cart',JSON.stringify(cart))}
+function cnt(){return Object.values(cart).reduce((a,b)=>a+b,0)}
+function sub(){return PRODS.filter(p=>cart[p.id]).reduce((a,p)=>a+p.price*cart[p.id],0)}
+function del(){let s=sub();return s===0?0:(s>=25?0:3.99)}
+function tot(){return sub()+del()}
+function renderCart(){let L=document.getElementById('lines');if(!L)return;
+  L.innerHTML=Object.keys(cart).length?PRODS.filter(p=>cart[p.id]).map(p=>'<div class="line"><span>'+p.name+'</span><span class="qty"><button onclick="chg(\''+p.id+'\',-1)">−</button> '+cart[p.id]+' <button onclick="chg(\''+p.id+'\',1)">+</button></span><span>$'+money(p.price*cart[p.id])+'</span></div>').join(''):'<p>Your cart is empty.</p>';
+  document.getElementById('sums').innerHTML='<div class="line"><span>Subtotal</span><span>$'+money(sub())+'</span></div><div class="line"><span>Delivery</span><span>'+(del()===0?'FREE':'$'+money(del()))+'</span></div><div class="line"><b>Total</b><b>$'+money(tot())+'</b></div>';
+  document.getElementById('checkout').innerHTML=cnt()?'<button class="btn" onclick="checkout()">Checkout →</button>':'';
+  document.getElementById('n').textContent=cnt();document.getElementById('t').textContent=money(tot())}
+function toggle(o){document.getElementById('drawer').classList.toggle('open',o);renderCart()}
+function showToast(msg){let t=document.getElementById('toast');t.innerHTML=msg+' <button onclick="toggle(true)">'+'View cart'+'</button>';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000)}
+function add(id){cart[id]=(cart[id]||0)+1;save();renderCart();let p=PRODS.find(x=>x.id===id);showToast('✓ 1 item added to '+'cart'+' — '+p.name);let b=document.querySelector('header .btn2');if(b){b.classList.remove('pulse');void b.offsetWidth;b.classList.add('pulse')}}
+function chg(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];save();renderCart()}
+function checkout(){if(!cnt())return;let ref='FM-'+Math.floor(1000+Math.random()*9000);document.getElementById('checkout').innerHTML='<div class="ok" style="display:block">Order placed! Reference <b>'+ref+'</b>. Demo only — nothing is charged or delivered.</div>';cart={};save();renderCart()}
+function renderGrid(){let g=document.getElementById('grid');if(!g)return;let q=(document.getElementById('q')?document.getElementById('q').value.toLowerCase():'');let list=PRODS.filter(p=>(CUR==='all'||p.cat===CUR)&&(p.name.toLowerCase().includes(q)));g.innerHTML=list.length?list.map(p=>'<div class="card"><h3>'+p.name+'</h3><p>'+p.note+'</p><p><b>$'+money(p.price)+'</b> '+p.unit+'</p><button class="btn2" onclick="add(\''+p.id+'\')">Add +</button></div>').join(''):'<p>No matches. Try another search.</p>'}
+function setFilter(c,el){CUR=c;document.querySelectorAll('.fbtn').forEach(b=>b.style.opacity=.6);if(el)el.style.opacity=1;renderGrid()}
+let CUR='all';
+</script>
+<script>
+let PRODS=[{id:'tom',name:'Heirloom Tomatoes',price:2.99,unit:'/ kg',cat:'veg',note:'Vine-ripened, sweet and firm.'},{id:'car',name:'Rainbow Carrots',price:2.40,unit:'/ kg',cat:'veg',note:'Crunchy, sweet, great roasted.'},{id:'avo',name:'Hass Avocados',price:1.80,unit:'each',cat:'fruit',note:'Ripe in 1-2 days.'},{id:'ban',name:'Bananas',price:0.99,unit:'/ kg',cat:'fruit',note:'Fair-trade, naturally sweet.'},{id:'man',name:'Alphonso Mangoes',price:2.50,unit:'each',cat:'fruit',note:'The king of fruits, in season.'},{id:'spi',name:'Baby Spinach',price:1.60,unit:'/ bag',cat:'veg',note:'Washed and ready to cook.'},{id:'str',name:'Strawberries',price:3.99,unit:'/ punnet',cat:'fruit',note:'Locally grown, fragrant.'},{id:'pot',name:'Baby Potatoes',price:1.20,unit:'/ kg',cat:'veg',note:'Thin-skinned, roast beautifully.'}];
+renderGrid();renderCart();
+</script>
+
+</body></html>
