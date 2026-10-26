@@ -1,0 +1,60 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>FreshMart — Farm Fresh Vegetables &amp; Fruits</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fdfbf3;color:#24301e;font-family:'DM Sans',sans-serif}
+.bar{background:#2f6b2a;color:#fff;text-align:center;font-size:13px;padding:8px}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;max-width:1100px;margin:0 auto}
+.logo{font-family:'Fraunces',serif;font-size:28px;color:#2f6b2a}.logo span{color:#e8722a}
+.cartbtn{background:#2f6b2a;color:#fff;border:0;padding:11px 20px;border-radius:999px;font-weight:700;cursor:pointer}
+.hero{max-width:1100px;margin:10px auto;padding:26px 24px;display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+.hero h1{font-family:'Fraunces',serif;font-size:50px;line-height:1.05;margin:0 0 12px}
+.hero p{color:#5c6b52;font-size:17px}
+.basket{height:260px;border-radius:28px;background:radial-gradient(circle at 30% 30%,#ffb347,#e8722a 45%,#2f6b2a 100%);display:flex;align-items:center;justify-content:center;font-size:100px}
+.pills{max-width:1100px;margin:0 auto;padding:10px 24px;display:flex;gap:10px;flex-wrap:wrap}
+.pill{border:2px solid #d8e4c8;background:#fff;padding:8px 16px;border-radius:999px;cursor:pointer;font-weight:600}
+.pill.on{background:#2f6b2a;color:#fff;border-color:#2f6b2a}
+.grid{max-width:1100px;margin:0 auto;padding:20px 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.card{background:#fff;border:1px solid #e4e0cf;border-radius:18px;padding:16px;text-align:center}
+.veg{height:90px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:50px;margin-bottom:10px}
+.price{color:#2f6b2a;font-weight:700;font-size:18px;margin:6px 0}
+.add{background:#f3f8ec;border:1px solid #2f6b2a;color:#2f6b2a;padding:8px 16px;border-radius:999px;font-weight:700;cursor:pointer}
+.drawer{position:fixed;top:0;right:0;width:360px;max-width:92vw;height:100%;background:#fff;box-shadow:-8px 0 30px rgba(0,0,0,.2);padding:22px;overflow:auto;transform:translateX(110%);transition:.25s;z-index:10}
+.drawer.open{transform:none}
+.line{display:flex;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid #eee;align-items:center}
+.qty button{width:26px;height:26px;border-radius:50%;border:1px solid #ccc;background:#fff;cursor:pointer;font-weight:700}
+input,select{width:100%;padding:11px;margin:6px 0;border:1px solid #d8d8ce;border-radius:10px;font-size:15px}
+.checkout{background:#e8722a;color:#fff;border:0;padding:13px;border-radius:999px;font-weight:700;width:100%;cursor:pointer;margin-top:12px}
+.ok{background:#e6f4ea;color:#1e5c2e;padding:14px;border-radius:12px;margin-top:12px;display:none}
+footer{text-align:center;color:#5c6b52;padding:24px;font-size:13px}
+@media(max-width:700px){.hero,.grid{grid-template-columns:1fr 1fr}.hero h1{font-size:36px}}
+</style></head><body>
+<div class="bar">Free delivery over $25 · Picked this morning from partner farms</div>
+<header><div class="logo">Fresh<span>Mart</span></div><button class="cartbtn" onclick="toggle(true)">Cart (<span id="n">0</span>) · $<span id="t">0.00</span></button></header>
+<section class="hero"><div><h1>Vegetables &amp; fruits, picked at dawn.</h1><p>From 40 local farms to your door in under 24 hours. Add to your cart — it saves automatically, even if you close the page.</p></div><div class="basket">🥬🍎🥕</div></section>
+<div class="pills" id="pills"></div>
+<section class="grid" id="shop"></section>
+<aside class="drawer" id="drawer"><h2 style="font-family:'Fraunces',serif">Your cart <button style="float:right;border:0;background:none;font-size:20px;cursor:pointer" onclick="toggle(false)">×</button></h2>
+<div id="lines"></div><div id="sums" style="margin-top:12px"></div>
+<h3>Checkout</h3><input id="cname" placeholder="Full name"/><input id="caddr" placeholder="Delivery address"/><input id="cphone" placeholder="Phone"/>
+<button class="checkout" onclick="placeOrder()">Place order →</button><div class="ok" id="ok"></div></aside>
+<footer>FreshMart · Static site — cart &amp; orders are saved in your browser (localStorage). No payment is taken; connect a payment provider to sell for real.</footer>
+<script>
+const P=[{id:1,n:'Rainbow Carrots',p:2.40,u:'/ kg',c:'veg',e:'🥕',bg:'#e8f5d8'},{id:2,n:'Honeycrisp Apples',p:3.90,u:'/ kg',c:'fruit',e:'🍎',bg:'#fde8d8'},{id:3,n:'Baby Spinach',p:1.80,u:'/ pack',c:'leaf',e:'🥬',bg:'#dff2d8'},{id:4,n:'Vine Tomatoes',p:2.90,u:'/ kg',c:'veg',e:'🍅',bg:'#fbe8e8'},{id:5,n:'Bananas',p:1.20,u:'/ kg',c:'fruit',e:'🍌',bg:'#fdf3d0'},{id:6,n:'Eggplant',p:2.10,u:'/ kg',c:'veg',e:'🍆',bg:'#e8e0f5'},{id:7,n:'Strawberries',p:4.50,u:'/ box',c:'fruit',e:'🍓',bg:'#ffe8ee'},{id:8,n:'Broccoli',p:2.60,u:'/ head',c:'leaf',e:'🥦',bg:'#dff2e2'}];
+const CATS=[['all','All'],['veg','Vegetables'],['fruit','Fruits'],['leaf','Leafy greens']];
+let cur='all',cart=JSON.parse(localStorage.getItem('fm_cart')||'{}');
+function save(){localStorage.setItem('fm_cart',JSON.stringify(cart));renderCart()}
+function pills(){document.getElementById('pills').innerHTML=CATS.map(c=>`<button class="pill ${c[0]===cur?'on':''}" onclick="cur='${c[0]}';pills();render()">${c[1]}</button>`).join('')}
+function render(){document.getElementById('shop').innerHTML=P.filter(x=>cur==='all'||x.c===cur).map(x=>`<div class="card"><div class="veg" style="background:${x.bg}">${x.e}</div><b>${x.n}</b><div class="price">$${x.p.toFixed(2)}${x.u}</div><button class="add" onclick="add(${x.id})">Add to cart</button></div>`).join('')}
+function add(id){cart[id]=(cart[id]||0)+1;save()}
+function chg(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];save()}
+function renderCart(){let n=0,sub=0,html='';for(let id in cart){let x=P.find(p=>p.id==id),q=cart[id];n+=q;sub+=x.p*q;html+=`<div class="line"><span>${x.e} ${x.n}</span><span class="qty"><button onclick="chg(${id},-1)">−</button> ${q} <button onclick="chg(${id},1)">+</button></span><span>$${(x.p*q).toFixed(2)}</span></div>`}
+document.getElementById('lines').innerHTML=html||'<p>Your cart is empty.</p>';
+let del=sub===0?0:(sub>=25?0:3.99);
+document.getElementById('sums').innerHTML=`<div>Subtotal: $${sub.toFixed(2)}</div><div>Delivery: ${del===0?'FREE':'$'+del.toFixed(2)}</div><div><b>Total: $${(sub+del).toFixed(2)}</b></div>`;
+document.getElementById('n').textContent=n;document.getElementById('t').textContent=(sub+del).toFixed(2)}
+function toggle(o){document.getElementById('drawer').classList.toggle('open',o)}
+function placeOrder(){let nm=document.getElementById('cname').value.trim(),ad=document.getElementById('caddr').value.trim();if(!nm||!ad||Object.keys(cart).length===0){alert('Add items and fill name + address first.');return}
+let ref='FM-'+Math.floor(1000+Math.random()*9000);document.getElementById('ok').style.display='block';document.getElementById('ok').innerHTML=`Order <b>${ref}</b> placed for ${nm}. Delivery to ${ad} — total $${document.getElementById('t').textContent}. (Demo checkout: no payment taken.)`;cart={};save()}
+pills();render();renderCart();
+</script></body></html>
